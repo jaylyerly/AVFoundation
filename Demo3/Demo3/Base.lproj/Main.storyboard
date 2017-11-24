@@ -688,7 +688,41 @@
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="KZg-eN-Ct6">
                                 <rect key="frame" x="0.0" y="206" width="480" height="64"/>
+                                <subviews>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="KPa-ou-SUY">
+                                        <rect key="frame" x="18" y="23" width="56" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Sepia" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Frx-bG-efs">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="XfG-lQ-9wD" name="value" keyPath="self.filter" id="Rnn-FB-VPD"/>
+                                        </connections>
+                                    </button>
+                                    <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ESx-TO-Pv7">
+                                        <rect key="frame" x="90" y="22" width="313" height="19"/>
+                                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="6.2830000000000004" tickMarkPosition="above" sliderType="linear" id="5Yk-Em-tc8"/>
+                                        <connections>
+                                            <binding destination="XfG-lQ-9wD" name="value" keyPath="self.rotation" id="2lC-ya-gf5"/>
+                                        </connections>
+                                    </slider>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvi-Da-VMz">
+                                        <rect key="frame" x="407" y="23" width="55" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Rotation" id="ifM-Ch-Zkh">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
                                 <constraints>
+                                    <constraint firstItem="Fvi-Da-VMz" firstAttribute="centerY" secondItem="KZg-eN-Ct6" secondAttribute="centerY" id="0h8-dL-kMj"/>
+                                    <constraint firstItem="ESx-TO-Pv7" firstAttribute="centerY" secondItem="KPa-ou-SUY" secondAttribute="centerY" id="8gn-S8-SDG"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fvi-Da-VMz" secondAttribute="trailing" constant="20" id="9dM-1p-7gl"/>
+                                    <constraint firstItem="KPa-ou-SUY" firstAttribute="leading" secondItem="KZg-eN-Ct6" secondAttribute="leading" constant="20" id="Bas-Oz-411"/>
+                                    <constraint firstItem="ESx-TO-Pv7" firstAttribute="leading" secondItem="KPa-ou-SUY" secondAttribute="trailing" constant="20" id="EkT-3a-LnG"/>
+                                    <constraint firstItem="Fvi-Da-VMz" firstAttribute="leading" secondItem="ESx-TO-Pv7" secondAttribute="trailing" constant="8" id="Ywm-GI-Xx6"/>
+                                    <constraint firstItem="Fvi-Da-VMz" firstAttribute="centerY" secondItem="KPa-ou-SUY" secondAttribute="centerY" id="jsK-yT-aaY"/>
                                     <constraint firstAttribute="height" constant="64" id="wQD-lG-ARP"/>
                                 </constraints>
                             </customView>

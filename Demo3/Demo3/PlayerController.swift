@@ -197,7 +197,6 @@ extension PlayerController {        // DisplayLink stuff
                 let pixelBuffer = videoOutput.copyPixelBuffer(forItemTime: itemTime,
                                                               itemTimeForDisplay: nil)
                 
-                print("\(itemTime.seconds)")
                 if let pBuf = pixelBuffer {
                     let videoImage = CIImage(cvPixelBuffer: pBuf)
                     DispatchQueue.main.async {

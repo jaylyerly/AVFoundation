@@ -17,8 +17,11 @@ class ViewController: NSViewController {
     @IBOutlet weak var videoSlider: NSSlider!
     @IBOutlet weak var videoLabel: NSTextField!
     
-    let playerController = PlayerController()
+    var rotation: CGFloat = 0.0
+    var filter = false
     
+    let playerController = PlayerController()
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -64,6 +67,11 @@ extension ViewController: PlayerControllerDelegate {
 
 extension ViewController: PlayerControllerImageDelegate {
     func playerController(_ playerController: PlayerController, hasNewImage image: CIImage) {
-        metalView.image = image
+        var img = image
+        img = img.applying(CGAffineTransform(rotationAngle: rotation))
+        if filter {
+            img = img.applyingFilter("CISepiaTone", withInputParameters: ["inputIntensity": 0.75])
+        }
+        metalView.image = img
     }
 }
