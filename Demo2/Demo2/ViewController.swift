@@ -54,6 +54,12 @@ extension ViewController: PlayerControllerDelegate {
     }
     
     func playerController(_ playerController: PlayerController, didChangePosition position: Float) {
+
+        // Bail if the left mouse button is down (ie, slider mid scrub).
+        // A bit of a hack, but doesn't require subclassing NSSlider
+        guard NSEvent.pressedMouseButtons() != 1 else {
+            return
+        }
         videoSlider.floatValue = position
     }
 }

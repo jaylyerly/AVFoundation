@@ -108,8 +108,6 @@ extension PlayerController {
     // From https://developer.apple.com/library/content/qa/qa1820/_index.html
     
     fileprivate func smoothSeek(to newChaseTime: CMTime) {
-        //player?.pause()
-        
         if CMTimeCompare(newChaseTime, chaseTime) != 0 {
             chaseTime = newChaseTime
             
