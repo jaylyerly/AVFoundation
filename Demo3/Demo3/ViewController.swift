@@ -18,7 +18,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var videoLabel: NSTextField!
     
     var rotation: CGFloat = 0.0
-    var filter = false
+    var sepiaIntensity: CGFloat = 0.0
     
     let playerController = PlayerController()
 
@@ -67,11 +67,9 @@ extension ViewController: PlayerControllerDelegate {
 
 extension ViewController: PlayerControllerImageDelegate {
     func playerController(_ playerController: PlayerController, hasNewImage image: CIImage) {
-        var img = image
-        img = img.applying(CGAffineTransform(rotationAngle: rotation))
-        if filter {
-            img = img.applyingFilter("CISepiaTone", withInputParameters: ["inputIntensity": 0.75])
-        }
-        metalView.image = img
+        metalView.image = image
+            .applying(CGAffineTransform(rotationAngle: rotation))
+            .applyingFilter("CISepiaTone",
+                            withInputParameters: ["inputIntensity": sepiaIntensity])
     }
 }

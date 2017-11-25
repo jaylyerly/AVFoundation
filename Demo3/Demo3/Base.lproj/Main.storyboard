@@ -4,6 +4,7 @@
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -683,54 +684,76 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Demo3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="395" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="KZg-eN-Ct6">
-                                <rect key="frame" x="0.0" y="206" width="480" height="64"/>
+                                <rect key="frame" x="0.0" y="206" width="395" height="64"/>
                                 <subviews>
-                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="KPa-ou-SUY">
-                                        <rect key="frame" x="18" y="23" width="56" height="18"/>
-                                        <buttonCell key="cell" type="check" title="Sepia" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Frx-bG-efs">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <binding destination="XfG-lQ-9wD" name="value" keyPath="self.filter" id="Rnn-FB-VPD"/>
-                                        </connections>
-                                    </button>
-                                    <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ESx-TO-Pv7">
-                                        <rect key="frame" x="90" y="22" width="313" height="19"/>
-                                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="6.2830000000000004" tickMarkPosition="above" sliderType="linear" id="5Yk-Em-tc8"/>
-                                        <connections>
-                                            <binding destination="XfG-lQ-9wD" name="value" keyPath="self.rotation" id="2lC-ya-gf5"/>
-                                        </connections>
-                                    </slider>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvi-Da-VMz">
-                                        <rect key="frame" x="407" y="23" width="55" height="17"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Rotation" id="ifM-Ch-Zkh">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nMC-aL-GDW">
+                                        <rect key="frame" x="16" y="0.0" width="363" height="64"/>
+                                        <subviews>
+                                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YHJ-5W-gey">
+                                                <rect key="frame" x="-2" y="23" width="131" height="19"/>
+                                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="Wox-vN-rwA"/>
+                                                <connections>
+                                                    <binding destination="XfG-lQ-9wD" name="value" keyPath="self.sepiaIntensity" id="C9P-Xf-VY7"/>
+                                                </connections>
+                                            </slider>
+                                            <textField horizontalHuggingPriority="1000" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6v-tK-pcM">
+                                                <rect key="frame" x="133" y="24" width="38" height="17"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sepia" id="4qo-32-471">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ESx-TO-Pv7">
+                                                <rect key="frame" x="175" y="23" width="131" height="19"/>
+                                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="6.2830000000000004" tickMarkPosition="above" sliderType="linear" id="5Yk-Em-tc8"/>
+                                                <connections>
+                                                    <binding destination="XfG-lQ-9wD" name="value" keyPath="self.rotation" id="2lC-ya-gf5"/>
+                                                </connections>
+                                            </slider>
+                                            <textField horizontalHuggingPriority="1000" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvi-Da-VMz">
+                                                <rect key="frame" x="310" y="24" width="55" height="17"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Rotation" id="ifM-Ch-Zkh">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ESx-TO-Pv7" firstAttribute="width" secondItem="YHJ-5W-gey" secondAttribute="width" id="CSO-qW-Twa"/>
+                                        </constraints>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Fvi-Da-VMz" firstAttribute="centerY" secondItem="KZg-eN-Ct6" secondAttribute="centerY" id="0h8-dL-kMj"/>
-                                    <constraint firstItem="ESx-TO-Pv7" firstAttribute="centerY" secondItem="KPa-ou-SUY" secondAttribute="centerY" id="8gn-S8-SDG"/>
-                                    <constraint firstAttribute="trailing" secondItem="Fvi-Da-VMz" secondAttribute="trailing" constant="20" id="9dM-1p-7gl"/>
-                                    <constraint firstItem="KPa-ou-SUY" firstAttribute="leading" secondItem="KZg-eN-Ct6" secondAttribute="leading" constant="20" id="Bas-Oz-411"/>
-                                    <constraint firstItem="ESx-TO-Pv7" firstAttribute="leading" secondItem="KPa-ou-SUY" secondAttribute="trailing" constant="20" id="EkT-3a-LnG"/>
-                                    <constraint firstItem="Fvi-Da-VMz" firstAttribute="leading" secondItem="ESx-TO-Pv7" secondAttribute="trailing" constant="8" id="Ywm-GI-Xx6"/>
-                                    <constraint firstItem="Fvi-Da-VMz" firstAttribute="centerY" secondItem="KPa-ou-SUY" secondAttribute="centerY" id="jsK-yT-aaY"/>
+                                    <constraint firstItem="nMC-aL-GDW" firstAttribute="leading" secondItem="KZg-eN-Ct6" secondAttribute="leading" constant="16" id="GvO-mZ-Quf"/>
+                                    <constraint firstAttribute="trailing" secondItem="nMC-aL-GDW" secondAttribute="trailing" constant="16" id="SJU-pI-joo"/>
+                                    <constraint firstAttribute="bottom" secondItem="nMC-aL-GDW" secondAttribute="bottom" id="V49-0p-21p"/>
                                     <constraint firstAttribute="height" constant="64" id="wQD-lG-ARP"/>
+                                    <constraint firstItem="nMC-aL-GDW" firstAttribute="top" secondItem="KZg-eN-Ct6" secondAttribute="top" id="zDj-vI-aM3"/>
                                 </constraints>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="cAm-4g-bqV" customClass="MetalImageView" customModule="Demo3" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="206"/>
+                                <rect key="frame" x="0.0" y="0.0" width="395" height="206"/>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="fsH-FR-cTc">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="206"/>
+                                <rect key="frame" x="0.0" y="0.0" width="395" height="206"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="urN-22-Imh">
                                         <rect key="frame" x="10" y="1" width="82" height="32"/>
@@ -746,7 +769,7 @@
                                         </connections>
                                     </button>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIC-6X-eIh">
-                                        <rect key="frame" x="18" y="169" width="444" height="17"/>
+                                        <rect key="frame" x="18" y="169" width="359" height="17"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="8bf-Qj-5K3">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -754,7 +777,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="27z-pG-xsZ">
-                                        <rect key="frame" x="92" y="6" width="370" height="24"/>
+                                        <rect key="frame" x="92" y="6" width="285" height="24"/>
                                         <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" tickMarkPosition="above" numberOfTickMarks="3" sliderType="linear" id="Kts-Xj-kXD"/>
                                         <connections>
                                             <action selector="handleSlider:" target="XfG-lQ-9wD" id="2IP-3P-Mey"/>
