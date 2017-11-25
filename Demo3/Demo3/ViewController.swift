@@ -56,12 +56,13 @@ extension ViewController: PlayerControllerDelegate {
     
     func playerController(_ playerController: PlayerController, didChangePosition position: Float) {
 
-        // Bail if the left mouse button is down (ie, slider mid scrub).
-        // A bit of a hack, but doesn't require subclassing NSSlider
-        guard NSEvent.pressedMouseButtons() != 1 else {
-            return
+        let winPt = NSApp.currentEvent?.locationInWindow ?? NSPoint(x: Int.max, y: Int.max)
+        let pt = view.convert(winPt, from: nil)     // convert from window coords
+        let outsideSliderView = (videoSlider.hitTest(pt) == nil)
+        
+        if outsideSliderView || (NSEvent.pressedMouseButtons() != 1){
+            videoSlider.floatValue = position
         }
-        videoSlider.floatValue = position
     }
 }
 
