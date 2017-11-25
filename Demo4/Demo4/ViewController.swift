@@ -29,8 +29,10 @@ class ViewController: NSViewController {
     @IBAction func toggleRecord(_ sender: NSButton) {
         if sender.state == NSOnState {
             print("Record!")
+            record()
         } else {
             print("Stop recording!")
+            stop()
         }
     }
     
@@ -39,6 +41,21 @@ class ViewController: NSViewController {
             captureController.selectedDevice = device
         }
     }
+    
+    func record() {
+        guard recordController.recording == false else {
+            return
+        }
+        recordController.size = metalView.image?.extent.size ?? NSSize(width: 100, height: 100)
+        recordController.record()
+    }
+    
+    func stop() {
+        guard recordController.recording == true else {
+            return
+        }
+        recordController.stop()
+    }
 }
 
 extension ViewController: CaptureControllerDelegate {
@@ -46,6 +63,10 @@ extension ViewController: CaptureControllerDelegate {
     func captureController(_ captureController: CaptureController, didCaptureImage image: CIImage, atTime time: CMTime) {
         
         metalView.image = image
+        
+        if recordController.recording {
+            recordController.recordFrame(image, syncTime: time)
+        }
         
     }
     

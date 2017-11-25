@@ -14,6 +14,7 @@
 		EC7747731FC9DB3C00B964B7 /* MetalImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7747721FC9DB3C00B964B7 /* MetalImageView.swift */; };
 		EC7747751FC9DCDA00B964B7 /* CaptureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7747741FC9DCDA00B964B7 /* CaptureController.swift */; };
 		EC7747771FC9DCEC00B964B7 /* RecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7747761FC9DCEC00B964B7 /* RecordController.swift */; };
+		EC7747791FCA0A8000B964B7 /* FileManager_utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7747781FCA0A8000B964B7 /* FileManager_utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		EC7747721FC9DB3C00B964B7 /* MetalImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalImageView.swift; sourceTree = "<group>"; };
 		EC7747741FC9DCDA00B964B7 /* CaptureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureController.swift; sourceTree = "<group>"; };
 		EC7747761FC9DCEC00B964B7 /* RecordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordController.swift; sourceTree = "<group>"; };
+		EC7747781FCA0A8000B964B7 /* FileManager_utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager_utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				EC7747721FC9DB3C00B964B7 /* MetalImageView.swift */,
 				EC7747741FC9DCDA00B964B7 /* CaptureController.swift */,
 				EC7747761FC9DCEC00B964B7 /* RecordController.swift */,
+				EC7747781FCA0A8000B964B7 /* FileManager_utils.swift */,
 				EC7747671FC9DB1300B964B7 /* Assets.xcassets */,
 				EC7747691FC9DB1300B964B7 /* Main.storyboard */,
 				EC77476C1FC9DB1300B964B7 /* Info.plist */,
@@ -145,6 +148,7 @@
 				EC7747661FC9DB1300B964B7 /* ViewController.swift in Sources */,
 				EC7747731FC9DB3C00B964B7 /* MetalImageView.swift in Sources */,
 				EC7747751FC9DCDA00B964B7 /* CaptureController.swift in Sources */,
+				EC7747791FCA0A8000B964B7 /* FileManager_utils.swift in Sources */,
 				EC7747771FC9DCEC00B964B7 /* RecordController.swift in Sources */,
 				EC7747641FC9DB1300B964B7 /* AppDelegate.swift in Sources */,
 			);
