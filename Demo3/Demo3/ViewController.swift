@@ -12,6 +12,7 @@ class ViewController: NSViewController {
     
     @IBOutlet weak var metalView: MetalImageView!
     @IBOutlet weak var videoControlsView: NSView!
+    @IBOutlet weak var filterControlsView: NSView!
 
     @IBOutlet weak var playButton: NSButton!
     @IBOutlet weak var videoSlider: NSSlider!
@@ -29,6 +30,8 @@ class ViewController: NSViewController {
         playerController.imageDelegate = self
 
         videoLabel.stringValue = "Ready for video..."
+        view.layer?.backgroundColor = CGColor.black
+        filterControlsView.layer?.backgroundColor = NSColor.lightGray.cgColor
     }
     
     @IBAction func handleSlider(_ sender: Any) {

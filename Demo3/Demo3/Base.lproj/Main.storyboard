@@ -687,7 +687,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="395" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="KZg-eN-Ct6">
+                            <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KZg-eN-Ct6">
                                 <rect key="frame" x="0.0" y="206" width="395" height="64"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nMC-aL-GDW">
@@ -811,6 +811,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="filterControlsView" destination="KZg-eN-Ct6" id="yS6-Uf-mGX"/>
                         <outlet property="metalView" destination="cAm-4g-bqV" id="9Q4-Qn-pvZ"/>
                         <outlet property="playButton" destination="urN-22-Imh" id="Tj1-dR-j2g"/>
                         <outlet property="videoControlsView" destination="fsH-FR-cTc" id="g77-ng-qQx"/>
