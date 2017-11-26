@@ -12,15 +12,20 @@ class ViewController: NSViewController {
 
     @IBOutlet weak fileprivate var metalView: MetalImageView!
     @IBOutlet weak fileprivate var controlsView: NSView!
+    @IBOutlet weak fileprivate var filtersView: NSView!
     @IBOutlet weak fileprivate var devicesController: NSArrayController!
 
     let captureController = CaptureController()
     let recordController = RecordController()
     
+    var rotation: CGFloat = 0.0
+    var sepiaIntensity: CGFloat = 0.0
+
     override func awakeFromNib() {
         super.awakeFromNib()
         view.layer?.backgroundColor = CGColor.black
         controlsView.layer?.backgroundColor = NSColor.lightGray.cgColor
+        filtersView.layer?.backgroundColor = NSColor.lightGray.cgColor
         
         captureController.delegate = self
     }
@@ -62,13 +67,17 @@ extension ViewController: CaptureControllerDelegate {
     func captureController(_ captureController: CaptureController,
                            didCaptureImage image: CIImage,
                            atTime time: CMTime) {
-        
-        metalView.image = image
+        let newImage = image
+            .applyingFilter("CIStraightenFilter",
+                            withInputParameters: ["inputAngle": rotation])
+            .applyingFilter("CISepiaTone",
+                            withInputParameters: ["inputIntensity": sepiaIntensity])
+
+        metalView.image = newImage
         
         if recordController.recording {
-            recordController.recordFrame(image, syncTime: time)
+            recordController.recordFrame(newImage, syncTime: time)
         }
-        
     }
     
 }
