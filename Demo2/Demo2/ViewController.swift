@@ -3,7 +3,6 @@
 //  Demo2
 //
 //  Created by Jay Lyerly on 11/24/17.
-//  Copyright © 2017 Oak City Labs. All rights reserved.
 //
 
 import AVKit
@@ -11,12 +10,12 @@ import Cocoa
 
 class ViewController: NSViewController {
     
-    @IBOutlet weak var avPlayerView: AVPlayerView!
-    @IBOutlet weak var videoControlsView: NSView!
+    @IBOutlet weak fileprivate var avPlayerView: AVPlayerView!
+    @IBOutlet weak fileprivate var videoControlsView: NSView!
 
-    @IBOutlet weak var playButton: NSButton!
-    @IBOutlet weak var videoSlider: NSSlider!
-    @IBOutlet weak var videoLabel: NSTextField!
+    @IBOutlet weak fileprivate var playButton: NSButton!
+    @IBOutlet weak fileprivate var videoSlider: NSSlider!
+    @IBOutlet weak fileprivate var videoLabel: NSTextField!
     
     let playerController = PlayerController()
     

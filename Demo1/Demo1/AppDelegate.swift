@@ -3,11 +3,10 @@
 //  Demo1
 //
 //  Created by Jay Lyerly on 11/24/17.
-//  Copyright © 2017 Oak City Labs. All rights reserved.
 //
 
-import AVKit
 import AVFoundation
+import AVKit
 import Cocoa
 
 @NSApplicationMain
@@ -18,10 +17,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let window = NSApp.windows.first
         let viewController = window?.contentViewController as? ViewController
-        viewController?.avPlayerView.player = AVPlayer(url: url)
-        viewController?.avPlayerView.player?.play()
+        viewController?.playUrl(url)
         
         return true
     }
 }
-

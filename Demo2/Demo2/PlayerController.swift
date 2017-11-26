@@ -3,7 +3,6 @@
 //  Demo2
 //
 //  Created by Jay Lyerly on 11/24/17.
-//  Copyright © 2017 Oak City Labs. All rights reserved.
 //
 
 import AVFoundation
@@ -52,10 +51,10 @@ class PlayerController: NSObject {
     
     override func observeValue(forKeyPath keyPath: String?,
                                of object: Any?,
-                               change: [NSKeyValueChangeKey : Any]?,
+                               change: [NSKeyValueChangeKey: Any]?,
                                context: UnsafeMutableRawPointer?) {
         if let somePlayer = object as? AVPlayer, somePlayer == player {
-            switch (keyPath ?? "") {
+            switch keyPath ?? "" {
             case "rate":
                 delegate?.playerController(self, didChangeRate: player.rate)
             default:
@@ -68,8 +67,8 @@ class PlayerController: NSObject {
         let interval = CMTime(seconds: 0.1,
                               preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         let mainQueue = DispatchQueue.main
-        timeObserver = player.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue) {
-                [weak self] time in
+        timeObserver = player.addPeriodicTimeObserver(forInterval: interval,
+                                                      queue: mainQueue) { [weak self] time in
             if let duration = self?.duration, let strongSelf = self {
                 let progress = Float(time.seconds / duration.seconds)
                 self?.delegate?.playerController(strongSelf, didChangePosition: progress)
@@ -120,8 +119,9 @@ extension PlayerController {
     fileprivate func actuallySeekToTime() {
         isSeekInProgress = true
         let seekTimeInProgress = chaseTime
-        player.seek(to: seekTimeInProgress, toleranceBefore: kCMTimeZero,
-                     toleranceAfter: kCMTimeZero) { (isFinished: Bool) -> Void in
+        player.seek(to: seekTimeInProgress,
+                    toleranceBefore: kCMTimeZero,
+                    toleranceAfter: kCMTimeZero) { (isFinished: Bool) -> Void in
                         guard isFinished else {
                             return
                         }
@@ -134,4 +134,3 @@ extension PlayerController {
         }
     }
 }
-

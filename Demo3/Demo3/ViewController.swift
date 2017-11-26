@@ -3,20 +3,19 @@
 //  Demo3
 //
 //  Created by Jay Lyerly on 11/24/17.
-//  Copyright © 2017 Oak City Labs. All rights reserved.
 //
 
 import Cocoa
 
 class ViewController: NSViewController {
     
-    @IBOutlet weak var metalView: MetalImageView!
-    @IBOutlet weak var videoControlsView: NSView!
-    @IBOutlet weak var filterControlsView: NSView!
+    @IBOutlet weak fileprivate var metalView: MetalImageView!
+    @IBOutlet weak fileprivate var videoControlsView: NSView!
+    @IBOutlet weak fileprivate var filterControlsView: NSView!
 
-    @IBOutlet weak var playButton: NSButton!
-    @IBOutlet weak var videoSlider: NSSlider!
-    @IBOutlet weak var videoLabel: NSTextField!
+    @IBOutlet weak fileprivate var playButton: NSButton!
+    @IBOutlet weak fileprivate var videoSlider: NSSlider!
+    @IBOutlet weak fileprivate var videoLabel: NSTextField!
     
     var rotation: CGFloat = 0.0
     var sepiaIntensity: CGFloat = 0.0
@@ -63,7 +62,7 @@ extension ViewController: PlayerControllerDelegate {
         let pt = view.convert(winPt, from: nil)     // convert from window coords
         let outsideSliderView = (videoSlider.hitTest(pt) == nil)
         
-        if outsideSliderView || (NSEvent.pressedMouseButtons() != 1){
+        if outsideSliderView || (NSEvent.pressedMouseButtons() != 1) {
             videoSlider.floatValue = position
         }
     }
