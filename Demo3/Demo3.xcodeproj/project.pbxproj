@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC405F121FCCC56B00334742 /* NSOpenPanel_utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC405F111FCCC56B00334742 /* NSOpenPanel_utils.swift */; };
 		EC7747421FC8802400B964B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7747411FC8802400B964B7 /* AppDelegate.swift */; };
 		EC7747441FC8802400B964B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7747431FC8802400B964B7 /* ViewController.swift */; };
 		EC7747461FC8802400B964B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC7747451FC8802400B964B7 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC405F111FCCC56B00334742 /* NSOpenPanel_utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSOpenPanel_utils.swift; sourceTree = "<group>"; };
 		EC77473E1FC8802400B964B7 /* Demo3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7747411FC8802400B964B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC7747431FC8802400B964B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				EC7747431FC8802400B964B7 /* ViewController.swift */,
 				EC7747531FC8995D00B964B7 /* PlayerController.swift */,
 				EC7747551FC8C4BC00B964B7 /* MetalImageView.swift */,
+				EC405F111FCCC56B00334742 /* NSOpenPanel_utils.swift */,
 				EC7747451FC8802400B964B7 /* Assets.xcassets */,
 				EC7747471FC8802500B964B7 /* Main.storyboard */,
 				EC77474A1FC8802500B964B7 /* Info.plist */,
@@ -173,6 +176,7 @@
 				EC7747521FC896B200B964B7 /* NSViewUtils.swift in Sources */,
 				EC7747541FC8995D00B964B7 /* PlayerController.swift in Sources */,
 				EC7747421FC8802400B964B7 /* AppDelegate.swift in Sources */,
+				EC405F121FCCC56B00334742 /* NSOpenPanel_utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

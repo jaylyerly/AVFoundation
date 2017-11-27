@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC405F0E1FCCBF7600334742 /* NSOpenPanel_utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC405F0D1FCCBF7600334742 /* NSOpenPanel_utils.swift */; };
 		EC7747241FC84C2400B964B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7747231FC84C2400B964B7 /* AppDelegate.swift */; };
 		EC7747261FC84C2500B964B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7747251FC84C2500B964B7 /* ViewController.swift */; };
 		EC7747281FC84C2500B964B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC7747271FC84C2500B964B7 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC405F0D1FCCBF7600334742 /* NSOpenPanel_utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSOpenPanel_utils.swift; sourceTree = "<group>"; };
 		EC7747201FC84C2400B964B7 /* Demo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7747231FC84C2400B964B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC7747251FC84C2500B964B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				EC7747231FC84C2400B964B7 /* AppDelegate.swift */,
 				EC7747251FC84C2500B964B7 /* ViewController.swift */,
+				EC405F0D1FCCBF7600334742 /* NSOpenPanel_utils.swift */,
 				EC7747271FC84C2500B964B7 /* Assets.xcassets */,
 				EC7747291FC84C2500B964B7 /* Main.storyboard */,
 				EC77472C1FC84C2500B964B7 /* Info.plist */,
@@ -165,6 +168,7 @@
 			files = (
 				EC7747261FC84C2500B964B7 /* ViewController.swift in Sources */,
 				EC7747241FC84C2400B964B7 /* AppDelegate.swift in Sources */,
+				EC405F0E1FCCBF7600334742 /* NSOpenPanel_utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

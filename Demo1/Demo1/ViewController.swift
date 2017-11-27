@@ -13,7 +13,7 @@ class ViewController: NSViewController {
     
     @IBOutlet weak private var avPlayerView: AVPlayerView!
     
-    func playUrl(_ url: URL) {
+    func play(url: URL) {
         avPlayerView.player = AVPlayer(url: url)
         avPlayerView.player?.play()
     }
