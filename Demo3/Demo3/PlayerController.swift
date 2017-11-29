@@ -50,6 +50,8 @@ class PlayerController: NSObject {
             
             let item = AVPlayerItem(url: videoUrl)
             player.replaceCurrentItem(with: item)
+            
+            // Configure VideoOutput for capturing frame data from AVPlayer
             let vOutput = AVPlayerItemVideoOutput(pixelBufferAttributes: pixelBufferDict)
             player.currentItem?.add(vOutput)
             videoOutput = vOutput
