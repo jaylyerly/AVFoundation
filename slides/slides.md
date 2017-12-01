@@ -190,6 +190,13 @@ AVCaptureView (macOS)
 ---
 
 # [NDŌʜᴅ](https://ndohd.com) 
+<br>
+# FEES
+### Fiberoptic Endoscopic Evaluation of Swallowing
+
+---
+
+# [NDŌʜᴅ](https://ndohd.com) 
 
 ![inline](fees.jpg)
 
